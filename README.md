@@ -17,3 +17,11 @@ This sounds like quite a lot of ICs and also quite complicated, but my design is
 Below is a shrunk and blurry overview of the entire schematic - click here for a [highres version](https://raw.githubusercontent.com/mengstr/Discrete-AY-3-8910/main/Images/AY-3-8910-full-large.png) of it.
 
 ![reduced overall schematic](Images/AY-3-8910-full-small.png)
+
+### Block diagram
+
+The is a block diragram showing how the modules are interconnected. Since the envelope genarator is fairly complex it is split into two parts. One for generating the clock that affects the rate of the envelope and one that actually creates the 4-bit digital values of the envelope. 
+
+Thick lines are busses of 4 or 8 bits, and the thin lines are single wires. This means that both the three tone genarator as well as the noise generator are just single 1-bit streams.
+
+![block diagram](Images/Module%20Block%20Diagram.png)

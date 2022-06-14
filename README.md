@@ -1,4 +1,4 @@
-# Discrete_AY-3-8910
+# Discrete AY-3-8910
 
 This is a WIP project to make a complete and fully compatible AY-3-8910 out of discrete and readily avaiable 74-series logic ICs.
 

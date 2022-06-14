@@ -12,7 +12,7 @@ The chip is fairly well analyzed and documented and even had its die analysed an
 
 Being a fan of Helmut Hneemanns project _Digital_ which is a circuit simulator for digital designs (much like Logisim) I started by making a design of the AY-3-8910 in it ending up in just a bit over 104 ICs.
 
-This sounds a lot and complicated, but my design is quite modular and most of the modules are quite simple and eyas to build. The most complex module is the envelope generator that can generate eight different envelopes that is used to vary the volume of the tones over time.  This part I have a copy as a separate module with testcases inorder to verify the correct function of each mode.
+This sounds like quite a lot of ICs and also quite complicated, but my design is modular and most of the modules are really simple and easy to build. The most complex module is the envelope generator that can generate eight different envelopes that is used to vary the volume of the tones over time.  This part I have a copy as a separate module with testcases inorder to verify the correct function of each mode.
 
 Below is a shrunk and blurry overview of the entire schematic - click here for a [highres version](https://raw.githubusercontent.com/mengstr/Discrete-AY-3-8910/main/Images/AY-3-8910-full-large.png) of it.
 

@@ -1287,7 +1287,7 @@
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>52</int>
+          <int>54</int>
         </entry>
       </elementAttributes>
       <pos x="15180" y="-2280"/>
@@ -5624,7 +5624,7 @@
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>68</int>
+          <int>70</int>
         </entry>
       </elementAttributes>
       <pos x="13500" y="-160"/>

@@ -144,3 +144,31 @@ All signals are received from the Control & Clock module
 - Out - The generated single bit noise send to the Mixer module
 
 ![Noise Generator Module](Images/Module-NoiseGen.png)
+
+### Mixer
+#### (Register R7)
+
+This module handles the enabling and mixing of the three tone- , and the single noise- channels.  In the real AY-3-8910 it also handles the direction of the two 8-bit I/O ports, but this version doesn't implement the ports - just like physically smaller AY-3-8913.
+
+The lowest three bits in the register are <span style="text-decoration:overline">Tone Enable</span> for the three tone channels. Since they are inverted a zero in a bit means the channel is open, and a one bit is a silet channel.  When set to one the the output bit is permamently high giving the possibility to use the Amplitude settings to manually vary the analog output for a DAC-like effect.
+
+The next three bits in the register are <span style="text-decoration:overline">Noise Enables</span> for the noise channel and controls whether the noise steam is injected (ORed) into the the tone stream.
+
+So this module output three bit streams with either a permanent high level, tone only, noise only or the two ixed together.  These streams are sent into the DAC-modules causing the output to toggle between zero and the value set by the Amplitude generators.
+
+**The inputs are:**
+- DA0..7 - 8 bits of bi-directional data
+- <span style="text-decoration:overline">Reset</span> - Clear register to zero
+- <span style="text-decoration:overline">WrMixer</span> - Latches 6 bits of data
+- <span style="text-decoration:overline">RdMixer</span> - Enables read-back of the data
+- ToneA - Square wave from the Tone Generator A module
+- ToneB - Square wave from the Tone Generator A module
+- ToneC - Square wave from the Tone Generator A module
+- Noise - Random pulse train from the Noise Genarator module
+
+**The outputs are:**
+- MixA - Mixed Tone A and Noise bitstream, or always high if not enabled 
+- MixB - Mixed Tone B and Noise bitstream, or always high if not enabled 
+- MixC - Mixed Tone B and Noise bitstream, or always high if not enabled 
+
+![Mixer Module](Images/Module-Mixer.png)

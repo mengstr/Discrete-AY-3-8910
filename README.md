@@ -94,3 +94,17 @@ The complexity level of this module is very low. It's bascially nothin more than
 - Res - Non-invertet reset signal to modules
 
 ![Control Module](Images/Module-Control.png)
+
+### Tone Generator (three copies)
+#### (Registers R0/R1, R2/R3, R4/R5)
+
+The AY-3-8910 have three of these modules which each outputs a square wave at a frequency controlled by two registers (12 bits in total).
+
+The module have a 12 bit up-counter that is reset whenever the count value is larger than the value from the combined register value.
+
+The square wave really should be at a 50% duty cycle, but in order to at least optimize the chip count a bit the 7474 "divide-by-two" IC is moved to the Mixer module, saving one full IC since each 7474 contains two separate dividers. But since the savings is so small I might move them back to the Tone Module if there's space enough on them. 
+
+Since the 744040 counter used here is a Ripple Carry counter the outputs of them will not change synchronously the output of the Magnitude Comparators is ANDed with the incoming clock to not reset the counter until the second phase of the clock when all the bits have settled.
+
+![Tone Generator Module](Images/Module-ToneGen.png)
+

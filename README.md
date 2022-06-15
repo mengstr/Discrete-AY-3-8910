@@ -106,5 +106,19 @@ The square wave really should be at a 50% duty cycle, but in order to at least o
 
 Since the 744040 counter used here is a Ripple Carry counter the outputs of them will not change synchronously the output of the Magnitude Comparators is ANDed with the incoming clock to not reset the counter until the second phase of the clock when all the bits have settled.
 
+**The inputs are:**
+- DA0..7 - 8 bits of bi-directional data
+- <span style="text-decoration:overline">Reset</span> - Clear register and counter to zero
+- CLK/16 - The master clock divided by 16 
+- <span style="text-decoration:overline">WrToneX-Fine</span> - Latches the least sigificant 8 bits of data
+- <span style="text-decoration:overline">WrToneX-Coarse</span> - Latches the most significate 4 bit of data
+- <span style="text-decoration:overline">RdToneX-Fine</span> - Enables read-back of the least sigificant 8 bits of data
+- <span style="text-decoration:overline">RdToneX-Coarse</span> - Enables read-back of the most significate 4 bit of data
+
+All signals are received from the Control & Clock module
+
+**The outputs are:**
+- Out - the generated square wave send to the Mixer module
+
 ![Tone Generator Module](Images/Module-ToneGen.png)
 

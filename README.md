@@ -154,7 +154,7 @@ The lowest three bits in the register are <span style="text-decoration:overline"
 
 The next three bits in the register are <span style="text-decoration:overline">Noise Enables</span> for the noise channel and controls whether the noise steam is injected (ORed) into the the tone stream.
 
-So this module output three bit streams with either a permanent high level, tone only, noise only or the two ixed together.  These streams are sent into the DAC-modules causing the output to toggle between zero and the value set by the Amplitude generators.
+So this module output three bit streams with either a permanent high level, tone only, noise only or the two ixed together.  These streams are sent into the Aplitude-modules causing the analoge output of the DACs to toggle between zero and the value set by the Amplitude generators.
 
 **The inputs are:**
 - DA0..7 - 8 bits of bi-directional data
